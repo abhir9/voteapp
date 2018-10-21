@@ -405,6 +405,9 @@ select {
 }
 
 .question-own-poll{
+    background-color: #2196f3;
+    color: white;
+    padding: 15px;
     margin-left: 10px;
 }
 
@@ -488,4 +491,10 @@ div.principal-btn{
 
 .logout-click {
     cursor:pointer;
+}
+.footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width:100%;
 }

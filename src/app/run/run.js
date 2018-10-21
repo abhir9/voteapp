@@ -2,7 +2,7 @@
 
 const run = ($rootScope, $location, StorageService, AuthService) => {
   if (AuthService.isLoggedIn()) {
-    const token = StorageService.getToken()
+    const token = StorageService.get('token')
     AuthService.setCredentials(token)
   }
 

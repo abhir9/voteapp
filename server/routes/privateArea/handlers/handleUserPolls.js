@@ -1,15 +1,10 @@
-const User = require('../../../models/user.js')
+const Poll = require('../../../models/poll.js')
 
 const getUserPolls = (req, res) => {
   const { id } = req.params
 
-  User
-    .findById(id)
-    .populate('ownedPolls.uid')
-    // .exec((err, userPolls) => {
-    //   if (err) throw err
-    //   console.log(JSON.stringify(userPolls, null, 2))
-    // })
+  Poll
+    .find()
     .then(userPolls => {
       console.log(userPolls)
       res.json(userPolls)

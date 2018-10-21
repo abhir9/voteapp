@@ -11,6 +11,11 @@ function resultsController ($scope, $rootScope, $routeParams, dataService, AuthS
   let saveCount = 0
   let dataOptions
   $scope.currentChart = 'bar'
+    $scope.userID = JSON.parse(localStorage.userData).id;
+    $scope.isUserRole =JSON.parse(localStorage.userData).role=='user';
+    // console.log(JSON.parse(localStorage.userData).role);
+    // console.log(JSON.parse(localStorage.userData).role=='user');
+    // console.log($scope.isUserRole);
 
   /* -------- SOCKET UPDATE ALL ----------- */
   socket.on('updateInfo', (idPollUpdated) => {

@@ -1,7 +1,7 @@
 const AuthInterceptor = (StorageService) => {
   return {
     request: function (config) {
-      const token = StorageService.getToken()
+      const token = StorageService.get('token')
       if (token) {
         config.headers['Authorization'] = `Bearer ${token}`
       }

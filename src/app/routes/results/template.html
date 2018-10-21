@@ -3,14 +3,14 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-                <a ng-href="/" id="logo-container" class="brand-logo">Suffragium</a>
+                <a ng-href="/" id="logo-container" class="brand-logo">voteapp</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
-                    <li><a href="#!/username/{{idUser}}">Account</a></li>
+                    <li><a href="#!/user">Account</a></li>
                     <li><a ng-click="logout()" class="logout-click">Logout</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="#!/username/{{idUser}}">Account</a></li>
+                    <li><a href="#!/user">Account</a></li>
                     <li><a ng-click="logout()" class="logout-click">Logout</a></li>
                 </ul>
             </div>
@@ -22,7 +22,7 @@
     <nav id="nav_f" class="default_color" role="navigation">
         <div class="container">
             <div class="nav-wrapper">
-                <a ng-href="/" id="logo-container" class="brand-logo">Suffragium</a>
+                <a ng-href="/" id="logo-container" class="brand-logo">voteapp</a>
                 <a data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a ng-href="#!/register">Register</a></li>
@@ -36,7 +36,7 @@
         </div>
     </nav>
 </div>
-<div class="container-results">
+<div  class="container-results">
     <div class="row">
         <div class="row col s11 l4 offset-l1 container-question">
             <p class="title-results-style title-size">{{question}}</p>
@@ -60,7 +60,7 @@
                 <p>Status: {{status ? 'Open' : 'Closed'}}</p>
             </div>
         </div>
-        <div class="col s11 l6 row container-graph">
+        <div ng-show="!isUserRole" class="col s11 l6 row container-graph">
             <canvas class="canvas-graph-style" height="120" width="230" id="myChart"></canvas>
             <div class="input-field col s6">
                 <select ng-change="changeChart(chartType)" ng-model="chartType">

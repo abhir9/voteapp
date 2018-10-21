@@ -1,4 +1,4 @@
-env.git_repo_name="https://github.com/jalbertsr/suffragium"
+env.git_repo_name="https://github.com/jalbertsr/voteapp"
 
 node("master")
 {

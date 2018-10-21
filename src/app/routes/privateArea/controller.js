@@ -1,21 +1,15 @@
 'use strict'
 
-function privateAreaController ($scope, $routeParams, $location, dataService, AuthService) {
+function privateAreaController ($scope, $routeParams,$rootScope,StorageService, $location, dataService, AuthService) {
   const modal = document.getElementById('info-modal')
-  const btn = document.getElementById('info-activate')
-  const btnClose = document.getElementById('btnClose')
   const addOption = document.getElementById('addOption')
 
   let optionNumber = 3
-  $scope.userID = $routeParams.id
+  $scope.userID = JSON.parse(StorageService.get('userData')).id;
+  $scope.isUserRole =JSON.parse(StorageService.get('userData')).role=='user';
+    console.log($scope.isUserRole);
+    console.log($scope.userID);
 
-  btn.onclick = function () {
-    modal.style.display = 'block'
-  }
-
-  btnClose.onclick = function () {
-    modal.style.display = 'none'
-  }
 
   addOption.onclick = function () {
     let optionInput = `<div class="input-field col s8">
@@ -52,7 +46,8 @@ function privateAreaController ($scope, $routeParams, $location, dataService, Au
 
   dataService.getUserPolls($scope.userID)
     .then((response) => {
-      $scope.userPolls = response.data.ownedPolls
+console.log(response);
+      $scope.polls = response.data
     })
     .catch(console.log)
 }

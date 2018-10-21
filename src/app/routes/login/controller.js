@@ -2,14 +2,17 @@
 
 'use strict'
 
-function loginController (AuthService, $location) {
+function  loginController (AuthService, $location,StorageService) {
+// consoe.log($localStorage);
   this.login = (e) => {
     e.preventDefault()
     AuthService.login(this.email, this.password)
       .then(data => {
-        if (data.success) {
+console.log(data);
+if (data.success) {
           Materialize.toast('Succesfully logged!', 2000)
-          $location.path(`/username/${data.id}`)
+    StorageService.set('userData',JSON.stringify(data))
+          $location.path('/user')
         }
       })
       .catch(() => Materialize.toast('Try again!', 2000))

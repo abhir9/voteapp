@@ -14,7 +14,7 @@
 ![Materializecss](https://pbs.twimg.com/profile_images/532662364613525504/GN559Lfb_reasonably_small.png)
 ![ButlerImage](http://jenkins-ci.org/sites/default/files/jenkins_logo.png)
 
-# [Suffragium](https://suffragium.herokuapp.com/#!/)
+# [voteapp](https://voteapp.herokuapp.com/#!/)
 
 ## Screenshoots
 
@@ -29,7 +29,7 @@
 ---
 ## Description
 
-Suffragium is a real time voting app where you can create your poll and get results instantly visualizing data in a way you've never done before! Suffragium is the best way to vote any quick decision and get the results at your hands. 
+voteapp is a real time voting app where you can create your poll and get results instantly visualizing data in a way you've never done before! voteapp is the best way to vote any quick decision and get the results at your hands.
 
 ---
 

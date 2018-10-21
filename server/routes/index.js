@@ -13,6 +13,7 @@ const handleUpdateImg = require('./infoPoll/handlers/handleUpdateImg')
 const getPolls = require('./home/handlers/handleGetPolls')
 const checkVote = require('../middlewares/checkVote')
 const checkLogin = require('../middlewares/checkLogin')
+const handleLogOut = require('../middlewares/handleLogOut')
 
 router.put('/api/poll/:pollId/vote/:voteIds', checkLogin, checkVote, handleVote)
 router.get('/api/infoPoll/:id', infoPoll)
@@ -20,7 +21,7 @@ router.get('/api/getPolls/', getPolls)
 router.get('/api/infoUser/:id', passport.authenticate('jwt', { session: false }), getUserPolls)
 router.post('/privateArea/', getPollInfo)
 router.post('/api/updateImg/:id', handleUpdateImg)
-
+router.get('/logout', handleLogOut)
 router.delete('/api/privateArea/:id', passport.authenticate('jwt', { session: false }), removePoll)
 router.put('/api/privateArea/:id/:status', passport.authenticate('jwt', { session: false }), updateStatus)
 

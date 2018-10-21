@@ -7,7 +7,7 @@ const AuthService = ($http, $rootScope, StorageService, jwtHelper) => {
   }
 
   const isLoggedIn = () => {
-    const token = StorageService.getToken()
+    const token = StorageService.get('token')
     if (!token) return false
     return true
   }
@@ -22,15 +22,17 @@ const AuthService = ($http, $rootScope, StorageService, jwtHelper) => {
     return $http.post('/login/', {email, password})
               .then(res => res.data)
               .then(data => {
-                StorageService.saveToken(data.token)
+                StorageService.set('token',data.token)
                 setCredentials(data.token)
                 return data
               })
   }
 
   const logout = (email, password) => {
-    StorageService.removeToken()
+      StorageService.clear();
     delete $rootScope.loggedUser
+      const url = `/logout`
+      return $http.get(url)
   }
 
   return {

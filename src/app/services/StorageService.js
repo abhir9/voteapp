@@ -1,18 +1,18 @@
 'use strict'
 const StorageService = ($window) => {
-  const saveToken = (token) => {
-    $window.localStorage.setItem('authToken', token)
+  const set = (key,value) => {
+    $window.localStorage.setItem(key,value)
   }
 
-  const getToken = () => {
-    return $window.localStorage.getItem('authToken')
+  const get = (key) => {
+    return $window.localStorage.getItem(key)
   }
 
-  const removeToken = () => {
-    $window.localStorage.removeItem('authToken')
+  const clear = () => {
+    $window.localStorage.clear();
   }
 
-  return { saveToken, getToken, removeToken }
+  return { set, get, clear }
 }
 
 module.exports = StorageService
