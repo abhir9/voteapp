@@ -4,8 +4,6 @@ const User = require('../../../models/user.js')
 const handleDeletePoll = (req, res) => {
   const { id } = req.params
 
-  console.log(id)
-
   User
     .update({}, {$pull: {ownedPolls: {uid: id}}}, { multi: true })
     .then((info) => console.log('delete reference from user confirmation', info))

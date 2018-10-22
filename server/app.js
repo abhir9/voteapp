@@ -12,14 +12,17 @@ const routes = require('./routes/')
 
 require('dotenv').load()
 
-const urlDb = process.env.urlDb || 'mongodb://localhost:27017/polls'
+//const urlDb = process.env.urlDb || 'mongodb://localhost:27017/polls'
+
+
 const PORT = process.env.PORT || 3002
 
 const pathPublic = path.join(process.cwd(), 'client')
 const secretKey = process.env.SECRETKEY || 'secretkey'
 
 mongoose.Promise = Promise
-mongoose.connect(urlDb, { useMongoClient: true })
+
+mongoose.connect('mongodb://demo:demo123@ds137913.mlab.com:37913/polls', {useMongoClient: true})
 
 app.use(express.static(pathPublic))
 

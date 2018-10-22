@@ -1,11 +1,11 @@
 {
   "name": "voteapp",
   "version": "1.0.0",
-  "description": "Create polls quickly and watch the results change in real time!",
+  "description": "Sample Vote App",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon server/app.js",
-    "dev": "nodemon server/app.js",
+    "start": "npm run build:js && node server/app.js",
+    "dev": "node server/app.js",
     "dev:debug": "DEBUG=*,-nodemon*,-send*, npm run dev",
     "dev:debug:socket": "DEBUG=socket.io* npm run dev",
     "build:js": "browserify -t brfs src/app/main.js -o client/bundle.js",

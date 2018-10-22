@@ -6,7 +6,6 @@ const getUserPolls = (req, res) => {
   Poll
     .find()
     .then(userPolls => {
-      console.log(userPolls)
       res.json(userPolls)
     })
     .catch(() => res.send(`FAIL to get poll owned by user w/ id ${id}`))

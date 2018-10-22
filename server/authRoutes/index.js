@@ -6,7 +6,6 @@ const SECRET = process.env.SECRET || 'SECRET'
 const handlelogin = require('./login/handlers/handlePostLogin')
 const handlePostRegister = require('./register/handlers/handlePostRegister')
 function authorize(req,res,next){
-    console.log(SECRET,'------------',req.token);
     jwt.verify(req.token,SECRET,function(err,token){
         if(err){
             console.log(err);

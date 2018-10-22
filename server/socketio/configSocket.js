@@ -3,7 +3,6 @@ function configSocket (server, app) {
   app.locals.io = io
   io.on('connection', (socket) => {
     socket.on('newVote', (data) => {
-      console.log('vote emited:', data)
     })
   })
 }

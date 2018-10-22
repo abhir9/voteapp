@@ -7,8 +7,6 @@ function privateAreaController ($scope, $routeParams,$rootScope,StorageService, 
   let optionNumber = 3
   $scope.userID = JSON.parse(StorageService.get('userData')).id;
   $scope.isUserRole =JSON.parse(StorageService.get('userData')).role=='user';
-    console.log($scope.isUserRole);
-    console.log($scope.userID);
 
 
   addOption.onclick = function () {
@@ -46,7 +44,6 @@ function privateAreaController ($scope, $routeParams,$rootScope,StorageService, 
 
   dataService.getUserPolls($scope.userID)
     .then((response) => {
-console.log(response);
       $scope.polls = response.data
     })
     .catch(console.log)
